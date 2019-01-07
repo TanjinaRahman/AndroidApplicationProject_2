@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#316b65</color>
+    <color name="colorPrimaryDark">#191e3d</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="back">#9be2ea</color>
+    <color name="button">#80c1c7</color>
+    <color name="bback">#438784</color>
+    <color name="white">#eaf2f2</color>
+    <color name="whitesky">#d0e6e6</color>
+    <color name="ash">#cee7e7</color>
+    <color name="dash">#bee1e1</color>
+    <color name="black">#303333</color>
+    <color name="bg">#0b1e2c</color>
+    <color name="baseReleaseColor">#212121</color>
+    <color name="base">#0c3e59</color>
+    <color name="darkash">#585757</color>
+</resources>
