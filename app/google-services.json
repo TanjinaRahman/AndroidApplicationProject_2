@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "225571393426",
+    "firebase_url": "https://myway-40e87.firebaseio.com",
+    "project_id": "myway-40e87",
+    "storage_bucket": "myway-40e87.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:225571393426:android:0134fede70381bd2",
+        "android_client_info": {
+          "package_name": "com.example.tinni.myway"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "225571393426-5ft27tm7qo91kduhp5tgbv8fojd87omt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.tinni.myway",
+            "certificate_hash": "83167ce2d4b93d926a5613957c3c556ca72d785f"
+          }
+        },
+        {
+          "client_id": "225571393426-emavrnrs3coc5d0o80aqsunq1eba6i9h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAKk_5j9cSyfCw29PZxNQ9S_-WM56sjWl4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "225571393426-emavrnrs3coc5d0o80aqsunq1eba6i9h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

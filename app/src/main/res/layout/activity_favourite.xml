@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Favourite"
+    android:background="@drawable/bg">
+
+
+    <TextView
+        android:id="@+id/textView2"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Select products that you want to buy or carry"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="16dp"
+        android:textStyle="bold"/>
+
+    <Button
+        android:id="@+id/doneb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/bback"
+        android:text="Done"
+        android:textColor="@color/white"
+        android:textSize="18dp"
+        tools:layout_editor_absoluteX="148dp"
+        tools:layout_editor_absoluteY="492dp" />
+</android.support.constraint.ConstraintLayout>
