@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:id="@+id/group1">
+        <item android:id="@+id/about"
+            android:title="About "
+            android:icon="@drawable/ic_help"
+            />
+    </group>
+    <group android:id="@+id/group2">
+        <item android:id="@+id/update"
+            android:title="Update Password "
+            android:icon="@drawable/ic_update"
+            />
+    </group>
+    <group android:id="@+id/group3">
+        <item android:id="@+id/delete"
+            android:title="Delete Account "
+            android:icon="@drawable/ic_delete" />
+    </group>
+
+</menu>

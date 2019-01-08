@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:id="@+id/group1">
+        <item android:id="@+id/profile"
+            android:title="Profile "
+            android:icon="@drawable/ic_account" />
+    </group>
+
+
+    <group android:id="@+id/group2">
+        <item android:id="@+id/parcel"
+            android:title="Parcel"
+            android:icon="@drawable/ic_local_parking_black_24dp"/>
+
+        <item android:id="@+id/shop"
+            android:title="Shop"
+            android:icon="@drawable/ic_shopping_basket"/>
+
+        <item android:id="@+id/work"
+            android:title="Work"
+            android:icon="@drawable/ic_bike"/>
+
+    </group>
+
+
+    <group android:id="@+id/group3">
+
+    <item android:id="@+id/settings"
+        android:title="Settings"
+        android:icon="@drawable/ic_settings"/>
+
+    <item android:id="@+id/logout"
+        android:title="Logout"
+        android:icon="@drawable/ic_exit"/>
+    />
+    </group>
+
+</menu>
