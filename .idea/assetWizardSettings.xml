@@ -18,7 +18,11 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
+<<<<<<< HEAD
                                       <entry key="url" value="jar:file:/snap/android-studio/69/android-studio/plugins/android/lib/android.jar!/images/material_design_icons/action/ic_update_black_24dp.xml" />
+=======
+                                      <entry key="url" value="jar:file:/snap/android-studio/69/android-studio/plugins/android/lib/android.jar!/images/material_design_icons/maps/ic_local_parking_black_24dp.xml" />
+>>>>>>> fc40b365bb3ac4a2a0968b99aea596cabbd149f5
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -28,7 +32,11 @@
                         </option>
                         <option name="values">
                           <map>
+<<<<<<< HEAD
                             <entry key="outputName" value="ic_update" />
+=======
+                            <entry key="outputName" value="ic_local_parking_black_24dp" />
+>>>>>>> fc40b365bb3ac4a2a0968b99aea596cabbd149f5
                             <entry key="sourceFile" value="$USER_HOME$" />
                           </map>
                         </option>

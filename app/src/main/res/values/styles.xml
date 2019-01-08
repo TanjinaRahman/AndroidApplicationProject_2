@@ -13,8 +13,11 @@
 
     </style>
 
+<<<<<<< HEAD
     <style name="menu_text">
         <item name="android:textSize">18dp</item>
     </style>
 
+=======
+>>>>>>> fc40b365bb3ac4a2a0968b99aea596cabbd149f5
 </resources>

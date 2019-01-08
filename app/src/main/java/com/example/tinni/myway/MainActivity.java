@@ -192,12 +192,19 @@ public class MainActivity extends AppCompatActivity {
                         .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
                             @Override
                             public void onSuccess(AuthResult authResult) {
+<<<<<<< HEAD
                                 final User user=new User();
+=======
+                                User user=new User();
+>>>>>>> fc40b365bb3ac4a2a0968b99aea596cabbd149f5
                                 user.setEmail(edtEmail.getText().toString());
                                 user.setPassword(edtPass.getText().toString());
                                 user.setName(edtName.getText().toString());
                                 user.setPhone(edtPhone.getText().toString());
+<<<<<<< HEAD
                                 //common.currentUser=user;
+=======
+>>>>>>> fc40b365bb3ac4a2a0968b99aea596cabbd149f5
 
                                 users.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).setValue(user)
                                         .addOnSuccessListener(new OnSuccessListener<Void>() {
@@ -209,7 +216,10 @@ public class MainActivity extends AppCompatActivity {
                                                         if(task.isSuccessful()){
                                                             Snackbar.make(rootLayout,"Registered successfully.\nPlease check your email for verification.",Snackbar.LENGTH_LONG).show();
                                                             //startActivity(new Intent(MainActivity.this,Favourite.class));
+<<<<<<< HEAD
 
+=======
+>>>>>>> fc40b365bb3ac4a2a0968b99aea596cabbd149f5
                                                         }
                                                         else {
                                                             Snackbar.make(rootLayout,task.getException().getMessage(),Snackbar.LENGTH_LONG).show();
