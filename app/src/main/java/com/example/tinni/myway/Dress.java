@@ -1,5 +1,6 @@
 package com.example.tinni.myway;
 
+<<<<<<< HEAD
 import android.app.ProgressDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -23,11 +24,18 @@ public class Dress extends AppCompatActivity {
     RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager;
 
+=======
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+
+public class Dress extends AppCompatActivity {
+>>>>>>> 62eb49be8f7e1a351c6ecd03ca90a1de185c6e92
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dress);
+<<<<<<< HEAD
 
         db = FirebaseDatabase.getInstance();
         product = db.getReference("Dress");
@@ -75,3 +83,7 @@ public class Dress extends AppCompatActivity {
 
 }
 
+=======
+    }
+}
+>>>>>>> 62eb49be8f7e1a351c6ecd03ca90a1de185c6e92

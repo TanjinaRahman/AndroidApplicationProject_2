@@ -6,8 +6,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:showIn="@layout/activity_food"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
+<<<<<<< HEAD
     android:background="@color/dash"
     android:padding="5dp">
+=======
+    android:background="@color/dash">
+>>>>>>> 62eb49be8f7e1a351c6ecd03ca90a1de185c6e92
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recycler_menu"

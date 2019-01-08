@@ -31,7 +31,11 @@ public class food extends AppCompatActivity {
 
 
         db = FirebaseDatabase.getInstance();
+<<<<<<< HEAD
         product = db.getReference("Food");
+=======
+        product = db.getReference("Products");
+>>>>>>> 62eb49be8f7e1a351c6ecd03ca90a1de185c6e92
 
         //progressbar
         mprogress= new ProgressDialog(this);
