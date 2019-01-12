@@ -195,8 +195,12 @@ public class MainActivity extends AppCompatActivity {
 <<<<<<< HEAD
                                 final User user=new User();
 =======
+<<<<<<< HEAD
+                                final User user=new User();
+=======
                                 User user=new User();
 >>>>>>> fc40b365bb3ac4a2a0968b99aea596cabbd149f5
+>>>>>>> a460a02678e6a1e66a0aec07db120c5a30c195b1
                                 user.setEmail(edtEmail.getText().toString());
                                 user.setPassword(edtPass.getText().toString());
                                 user.setName(edtName.getText().toString());
@@ -204,7 +208,11 @@ public class MainActivity extends AppCompatActivity {
 <<<<<<< HEAD
                                 //common.currentUser=user;
 =======
+<<<<<<< HEAD
+                                //common.currentUser=user;
+=======
 >>>>>>> fc40b365bb3ac4a2a0968b99aea596cabbd149f5
+>>>>>>> a460a02678e6a1e66a0aec07db120c5a30c195b1
 
                                 users.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).setValue(user)
                                         .addOnSuccessListener(new OnSuccessListener<Void>() {
@@ -219,7 +227,11 @@ public class MainActivity extends AppCompatActivity {
 <<<<<<< HEAD
 
 =======
+<<<<<<< HEAD
+
+=======
 >>>>>>> fc40b365bb3ac4a2a0968b99aea596cabbd149f5
+>>>>>>> a460a02678e6a1e66a0aec07db120c5a30c195b1
                                                         }
                                                         else {
                                                             Snackbar.make(rootLayout,task.getException().getMessage(),Snackbar.LENGTH_LONG).show();

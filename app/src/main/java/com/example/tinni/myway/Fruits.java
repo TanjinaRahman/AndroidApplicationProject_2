@@ -3,7 +3,10 @@ package com.example.tinni.myway;
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
 >>>>>>> fc40b365bb3ac4a2a0968b99aea596cabbd149f5
+>>>>>>> a460a02678e6a1e66a0aec07db120c5a30c195b1
 import android.app.ProgressDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -29,6 +32,8 @@ public class Fruits extends AppCompatActivity {
 
 <<<<<<< HEAD
 =======
+<<<<<<< HEAD
+=======
 =======
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -36,6 +41,7 @@ import android.os.Bundle;
 public class Fruits extends AppCompatActivity {
 >>>>>>> 62eb49be8f7e1a351c6ecd03ca90a1de185c6e92
 >>>>>>> fc40b365bb3ac4a2a0968b99aea596cabbd149f5
+>>>>>>> a460a02678e6a1e66a0aec07db120c5a30c195b1
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +50,10 @@ public class Fruits extends AppCompatActivity {
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
 >>>>>>> fc40b365bb3ac4a2a0968b99aea596cabbd149f5
+>>>>>>> a460a02678e6a1e66a0aec07db120c5a30c195b1
         db = FirebaseDatabase.getInstance();
         product = db.getReference();
 
@@ -91,8 +100,11 @@ public class Fruits extends AppCompatActivity {
 
 <<<<<<< HEAD
 =======
+<<<<<<< HEAD
+=======
 =======
     }
 >>>>>>> 62eb49be8f7e1a351c6ecd03ca90a1de185c6e92
 >>>>>>> fc40b365bb3ac4a2a0968b99aea596cabbd149f5
+>>>>>>> a460a02678e6a1e66a0aec07db120c5a30c195b1
 }

@@ -2,8 +2,12 @@
 <<<<<<< HEAD
 <LinearLayout
 =======
+<<<<<<< HEAD
+<LinearLayout
+=======
 <RelativeLayout
 >>>>>>> fc40b365bb3ac4a2a0968b99aea596cabbd149f5
+>>>>>>> a460a02678e6a1e66a0aec07db120c5a30c195b1
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -11,6 +15,9 @@
     android:layout_height="match_parent"
     tools:context=".profile"
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> a460a02678e6a1e66a0aec07db120c5a30c195b1
     android:background="@color/dash"
     android:padding="15dp"
     android:orientation="vertical">
@@ -103,6 +110,9 @@
 
 
 
+<<<<<<< HEAD
+</LinearLayout>
+=======
 </LinearLayout>
 =======
     android:background="@color/bg"
@@ -146,3 +156,4 @@
 
 </RelativeLayout>
 >>>>>>> fc40b365bb3ac4a2a0968b99aea596cabbd149f5
+>>>>>>> a460a02678e6a1e66a0aec07db120c5a30c195b1
