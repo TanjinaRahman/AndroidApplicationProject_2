@@ -14,10 +14,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> a460a02678e6a1e66a0aec07db120c5a30c195b1
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -32,17 +28,6 @@ public class Homepage extends AppCompatActivity implements NavigationView.OnNavi
      FirebaseAuth auth;
      FirebaseDatabase db;
      DatabaseReference user;
-<<<<<<< HEAD
-=======
-=======
-
-public class Homepage extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-     //ProgressDialog mprogress;
-     DrawerLayout mDrawerLayout;
-     ActionBarDrawerToggle mToggle;
-     FirebaseAuth auth;
->>>>>>> fc40b365bb3ac4a2a0968b99aea596cabbd149f5
->>>>>>> a460a02678e6a1e66a0aec07db120c5a30c195b1
      TextView nm,eml;
 
      CardView dr,hd,fr,fo;
@@ -52,16 +37,8 @@ public class Homepage extends AppCompatActivity implements NavigationView.OnNavi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homepage);
         auth = FirebaseAuth.getInstance();
-<<<<<<< HEAD
         db = FirebaseDatabase.getInstance();
         user = db.getReference("Users").child("Buyer").child(auth.getCurrentUser().getUid());
-=======
-<<<<<<< HEAD
-        db = FirebaseDatabase.getInstance();
-        user = db.getReference("Users").child("Buyer").child(auth.getCurrentUser().getUid());
-=======
->>>>>>> fc40b365bb3ac4a2a0968b99aea596cabbd149f5
->>>>>>> a460a02678e6a1e66a0aec07db120c5a30c195b1
 
      /*   //progressbar
         mprogress= new ProgressDialog(this);
@@ -88,12 +65,7 @@ public class Homepage extends AppCompatActivity implements NavigationView.OnNavi
 
 
 
-<<<<<<< HEAD
         //View headerView = navigationView.getHeaderView(0);
-=======
-        View headerView = navigationView.getHeaderView(0);
-<<<<<<< HEAD
->>>>>>> a460a02678e6a1e66a0aec07db120c5a30c195b1
 
         //nm.setText(user.toString());
         //eml = (TextView)headerView.findViewById(R.id.eml);
@@ -119,15 +91,6 @@ public class Homepage extends AppCompatActivity implements NavigationView.OnNavi
         });
 
 
-<<<<<<< HEAD
-=======
-=======
-        nm = (TextView)headerView.findViewById(R.id.nm);
-       // nm.setText(usr.getName());
-        eml = (TextView)headerView.findViewById(R.id.eml);
-        eml.setText(auth.getCurrentUser().getEmail());
->>>>>>> fc40b365bb3ac4a2a0968b99aea596cabbd149f5
->>>>>>> a460a02678e6a1e66a0aec07db120c5a30c195b1
 
       /*fd.setOnClickListener(new View.OnClickListener() {
           @Override
