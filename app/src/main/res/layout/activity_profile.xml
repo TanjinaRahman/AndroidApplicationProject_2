@@ -16,9 +16,24 @@
         android:layout_gravity="center">
 
         <ImageView
-            android:layout_width="180dp"
-            android:layout_height="180dp"
-            android:src="@drawable/food"/>
+            android:id="@+id/profile_img"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:adjustViewBounds="true"
+            android:src="@drawable/food"
+            android:layout_centerInParent="true"/>
+
+        <ImageButton
+            android:id="@+id/edit_profile_img"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_below="@+id/profile_img"
+            android:layout_alignParentLeft="true"
+            android:layout_margin="8dp"
+            android:layout_marginTop="-12dp"
+            android:layout_marginEnd="8dp"
+            android:background="#00000000"
+            android:src="@drawable/edit_icon" />
 
     </RelativeLayout>
 
@@ -38,7 +53,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="name"
+            android:text=""
             android:textSize="22dp"
             android:textColor="@color/base"
             android:id="@+id/t1"/>
@@ -63,7 +78,7 @@
         android:id="@+id/t2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        android:text=""
         android:textSize="22dp"
         android:textColor="@color/base"
         />
@@ -89,7 +104,7 @@
         android:id="@+id/t3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        android:text=""
         android:textSize="22dp"
         android:textColor="@color/base"
         />

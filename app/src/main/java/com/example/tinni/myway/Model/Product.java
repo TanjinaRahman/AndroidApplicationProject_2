@@ -3,13 +3,16 @@ package com.example.tinni.myway.Model;
 public class Product {
     private String Name;
     private String Image;
+    private String Description;
+
 
     public Product(){
     }
 
-    public Product(String name, String image) {
+    public Product(String name, String image, String description) {
         Name = name;
         Image = image;
+        Description = description;
     }
 
     public String getName() {
@@ -26,5 +29,13 @@ public class Product {
 
     public void setImage(String image) {
         Image = image;
+    }
+
+    public String getDescription() {
+        return Description;
+    }
+
+    public void setDescription(String description) {
+        Description = description;
     }
 }

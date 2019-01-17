@@ -15,7 +15,7 @@
         android:id="@+id/nm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Name"
+        android:text=""
         android:textColor="@color/base"
         android:textSize="20dp"
         android:textStyle="bold"
@@ -25,7 +25,7 @@
         android:id="@+id/eml"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="abcd@gmail.com"
+        android:text=""
         android:textColor="@color/base"
         android:textSize="17dp"/>
 

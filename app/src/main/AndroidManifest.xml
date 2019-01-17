@@ -9,6 +9,7 @@
          location permissions for the 'MyLocation' functionality.
     -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
     <application
         android:allowBackup="true"
@@ -16,7 +17,8 @@
         android:roundIcon="@drawable/lg"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        tools:ignore="GoogleAppIndexingWarning">
+        tools:ignore="GoogleAppIndexingWarning"
+        tools:replace="android:icon">
         <activity
             android:name=".MainActivity"
             android:theme="@style/NoActionBar">
@@ -54,14 +56,19 @@
         <activity
             android:name=".profile"
             android:label="Profile" />
-        <activity android:name=".food"
-            android:label="Foods"/>
-        <activity android:name=".Dress"
-            android:label="Dresses"/>
-        <activity android:name=".Fruits"
-            android:label="Fruits"/>
-        <activity android:name=".Handicrafts"
-            android:label="Handicrafts"></activity>
+        <activity
+            android:name=".food"
+            android:label="Foods" />
+        <activity
+            android:name=".Dress"
+            android:label="Dresses" />
+        <activity
+            android:name=".Fruits"
+            android:label="Fruits" />
+        <activity
+            android:name=".Handicrafts"
+            android:label="Handicrafts" />
+        <activity android:name=".Details"></activity>
     </application>
 
 </manifest>

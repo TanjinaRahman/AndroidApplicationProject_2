@@ -17,4 +17,14 @@
         <item name="android:textSize">18dp</item>
     </style>
 
+    <style name="CollapsedAppbar" parent="@style/TextAppearance.AppCompat.Medium">
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">20dp</item>
+    </style>
+    <style name="ExpandedAppbar" parent="@style/TextAppearance.MaterialComponents.Body1">
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/base</item>
+    </style>
+
 </resources>

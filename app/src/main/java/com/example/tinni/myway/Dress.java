@@ -10,7 +10,6 @@ import android.widget.Toast;
 
 import com.example.tinni.myway.Interface.ItemClickListener;
 import com.example.tinni.myway.Model.Product;
-import com.example.tinni.myway.ViewHolder.MenuViewHolder;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;

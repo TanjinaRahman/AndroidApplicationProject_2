@@ -4,7 +4,7 @@ android {
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.example.tinni.myway"
-        minSdkVersion 18
+        minSdkVersion 21
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
@@ -45,5 +45,7 @@ dependencies {
     implementation 'com.rengwuxian.materialedittext:library:2.1.4'
     implementation 'de.hdodenhof:circleimageview:2.2.0'
     implementation 'com.squareup.picasso:picasso:2.5.2'
+    implementation 'com.cepheuen.elegant-number-button:lib:1.0.2'
+    implementation 'info.hoang8f:fbutton:1.0.5'
 }
 apply plugin: 'com.google.gms.google-services'
