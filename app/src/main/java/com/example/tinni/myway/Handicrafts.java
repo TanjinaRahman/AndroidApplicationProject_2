@@ -1,6 +1,7 @@
 package com.example.tinni.myway;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -21,6 +22,7 @@ public class Handicrafts extends AppCompatActivity {
     DatabaseReference product;
     RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager;
+    FirebaseRecyclerAdapter<Product,MenuViewHolder> adapter;
 
 
     @Override
@@ -51,7 +53,7 @@ public class Handicrafts extends AppCompatActivity {
     }
     private void loadMenu() {
         mprogress.show();//to show progressbar
-        FirebaseRecyclerAdapter<Product,MenuViewHolder> adapter = new FirebaseRecyclerAdapter<Product, MenuViewHolder>(Product.class,R.layout.menu_item,MenuViewHolder.class,product) {
+        adapter = new FirebaseRecyclerAdapter<Product, MenuViewHolder>(Product.class,R.layout.menu_item,MenuViewHolder.class,product) {
             @Override
             protected void populateViewHolder(MenuViewHolder viewHolder, Product model, int position) {
                 viewHolder.txtMenuName.setText(model.getName());
@@ -61,6 +63,9 @@ public class Handicrafts extends AppCompatActivity {
                     @Override
                     public void onClick(View view, int position, boolean isLongClick) {
                         Toast.makeText(Handicrafts.this,""+clickItem.getName(),Toast.LENGTH_SHORT).show();
+                        Intent hdetail = new Intent (Handicrafts.this,Details_hand.class);
+                        hdetail.putExtra("HandicraftID",adapter.getRef(position).getKey());
+                        startActivity(hdetail);
                     }
                 });
                 mprogress.dismiss();//to dissmiss progressbar

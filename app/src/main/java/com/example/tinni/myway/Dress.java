@@ -1,8 +1,9 @@
 package com.example.tinni.myway;
 
 import android.app.ProgressDialog;
-import android.support.v7.app.AppCompatActivity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -21,6 +22,7 @@ public class Dress extends AppCompatActivity {
     DatabaseReference product;
     RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager;
+    FirebaseRecyclerAdapter<Product,MenuViewHolder> adapter;
 
 
     @Override
@@ -52,7 +54,7 @@ public class Dress extends AppCompatActivity {
     }
     private void loadMenu() {
         mprogress.show();//to show progressbar
-        FirebaseRecyclerAdapter<Product,MenuViewHolder> adapter = new FirebaseRecyclerAdapter<Product, MenuViewHolder>(Product.class,R.layout.menu_item,MenuViewHolder.class,product) {
+        adapter = new FirebaseRecyclerAdapter<Product, MenuViewHolder>(Product.class,R.layout.menu_item,MenuViewHolder.class,product) {
             @Override
             protected void populateViewHolder(MenuViewHolder viewHolder, Product model, int position) {
                 viewHolder.txtMenuName.setText(model.getName());
@@ -62,6 +64,9 @@ public class Dress extends AppCompatActivity {
                     @Override
                     public void onClick(View view, int position, boolean isLongClick) {
                         Toast.makeText(Dress.this,""+clickItem.getName(),Toast.LENGTH_SHORT).show();
+                        Intent dressdetail = new Intent (Dress.this,Details_dress.class);
+                        dressdetail.putExtra("DressID",adapter.getRef(position).getKey());
+                        startActivity(dressdetail);
                     }
                 });
                 mprogress.dismiss();//to dissmiss progressbar
