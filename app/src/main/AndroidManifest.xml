@@ -18,7 +18,8 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning"
         tools:replace="android:icon">
-        <activity android:name=".Details_hand"></activity>
+        <activity android:name=".Worker"></activity>
+        <activity android:name=".Details_hand" />
         <activity android:name=".Details_dress" />
         <activity
             android:name=".MainActivity"

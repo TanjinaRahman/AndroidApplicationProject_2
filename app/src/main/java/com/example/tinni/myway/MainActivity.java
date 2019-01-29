@@ -42,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
     FirebaseAuth auth;
     FirebaseDatabase db;
     DatabaseReference users;
+    //DatabaseReference uur;
 
 
     @Override
@@ -70,6 +71,8 @@ public class MainActivity extends AppCompatActivity {
         auth = FirebaseAuth.getInstance();
         db = FirebaseDatabase.getInstance();
         users = db.getReference("Users").child("Buyer");
+        //uur=db.getReference("Buyer");
+
 
         if (auth.getCurrentUser() != null && auth.getCurrentUser().isEmailVerified()) {
             // User is signed in.
@@ -124,6 +127,7 @@ public class MainActivity extends AppCompatActivity {
 
             if (auth.getCurrentUser().isEmailVerified()) {
                 mprogress.dismiss();
+
                 startActivity(new Intent(MainActivity.this, Homepage.class));
                 finish();
             } else {
@@ -138,7 +142,6 @@ public class MainActivity extends AppCompatActivity {
             Snackbar.make(rootLayout, "Login Failed.\n" + e.getMessage(), Snackbar.LENGTH_SHORT).show();
         }
     });
-
 }
 
 
@@ -197,16 +200,20 @@ public class MainActivity extends AppCompatActivity {
                                 user.setPassword(edtPass.getText().toString());
                                 user.setName(edtName.getText().toString());
                                 user.setPhone(edtPhone.getText().toString());
-                                //common.currentUser=user;
+                                //Common.currentUser=user;
 
                                 users.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).setValue(user)
                                         .addOnSuccessListener(new OnSuccessListener<Void>() {
+
                                             @Override
                                             public void onSuccess(Void aVoid) {
+                                                //Common.currentUser=user;
                                                 FirebaseAuth.getInstance().getCurrentUser().sendEmailVerification().addOnCompleteListener(new OnCompleteListener<Void>() {
                                                     @Override
                                                     public void onComplete(@NonNull Task<Void> task) {
                                                         if(task.isSuccessful()){
+
+                                                           //
                                                             Snackbar.make(rootLayout,"Registered successfully.\nPlease check your email for verification.",Snackbar.LENGTH_LONG).show();
                                                             //startActivity(new Intent(MainActivity.this,Favourite.class));
 

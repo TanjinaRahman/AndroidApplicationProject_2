@@ -1,11 +1,13 @@
 package com.example.tinni.myway;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.view.MenuItem;
@@ -13,6 +15,9 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.tinni.myway.Model.Work;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -27,7 +32,7 @@ public class Homepage extends AppCompatActivity implements NavigationView.OnNavi
      ActionBarDrawerToggle mToggle;
      FirebaseAuth auth;
      FirebaseDatabase db;
-     DatabaseReference user;
+     DatabaseReference user,work;
      TextView nm,eml;
 
      CardView dr,hd,fr,fo;
@@ -39,7 +44,7 @@ public class Homepage extends AppCompatActivity implements NavigationView.OnNavi
         auth = FirebaseAuth.getInstance();
         db = FirebaseDatabase.getInstance();
         user = db.getReference("Users").child("Buyer").child(auth.getCurrentUser().getUid());
-
+        work = db.getReference("Work");
      /*   //progressbar
         mprogress= new ProgressDialog(this);
         // mprogress.setTitle("Processing...");
@@ -149,6 +154,9 @@ public class Homepage extends AppCompatActivity implements NavigationView.OnNavi
             /*case R.id.about:
                 startActivity(new Intent(Homepage.this,about.class));
                 break;*/
+            case R.id.work:
+                wannawork();
+                break;
             case R.id.settings:
                 startActivity(new Intent(Homepage.this,settings.class));
                 break;
@@ -162,5 +170,43 @@ public class Homepage extends AppCompatActivity implements NavigationView.OnNavi
                 break;
         }
         return true;
+    }
+
+    private void wannawork() {
+
+        if (work.child(auth.getCurrentUser().getUid())!=null) {
+            startActivity(new Intent(Homepage.this, Worker.class));
+
+        } else {
+            AlertDialog.Builder dialog = new AlertDialog.Builder(this);
+            dialog.setTitle("Want to Work? ");
+            dialog.setMessage("If you want to work here,then you have to pay 2$ per month.");
+            dialog.setPositiveButton("Agree", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    Work wrk = new Work();
+                    wrk.setUId(auth.getCurrentUser().getUid());
+                    work.setValue(wrk).addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void aVoid) {
+                            Toast.makeText(Homepage.this, "Congratulations", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(Homepage.this, Worker.class));
+                        }
+                    }).addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+
+                            Toast.makeText(Homepage.this, "Oh, something went worng!", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                }
+            }).setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    dialog.dismiss();
+                }
+            });
+            dialog.show();
+        }
     }
 }

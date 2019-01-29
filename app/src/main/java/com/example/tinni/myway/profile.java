@@ -41,9 +41,12 @@ public class profile extends AppCompatActivity {
         db = FirebaseDatabase.getInstance();
         user = db.getReference("Users").child("Buyer").child(auth.getCurrentUser().getUid());
 
+
+
         user.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
                 String n=dataSnapshot.child("name").getValue().toString();
                 String e =dataSnapshot.child("email").getValue().toString();
                 String p =dataSnapshot.child("phone").getValue().toString();
@@ -54,6 +57,7 @@ public class profile extends AppCompatActivity {
                 nam.setText(n);
                 mail.setText(e);
                 phn.setText(p);
+
 
             }
 
