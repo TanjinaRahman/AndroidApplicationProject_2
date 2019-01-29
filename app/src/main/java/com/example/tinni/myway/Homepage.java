@@ -175,7 +175,7 @@ public class Homepage extends AppCompatActivity implements NavigationView.OnNavi
     private void wannawork() {
 
         if (work.child(auth.getCurrentUser().getUid())!=null) {
-            startActivity(new Intent(Homepage.this, Worker.class));
+            startActivity(new Intent(Homepage.this, deliverMap.class));
 
         } else {
             AlertDialog.Builder dialog = new AlertDialog.Builder(this);
@@ -190,7 +190,7 @@ public class Homepage extends AppCompatActivity implements NavigationView.OnNavi
                         @Override
                         public void onSuccess(Void aVoid) {
                             Toast.makeText(Homepage.this, "Congratulations", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(Homepage.this, Worker.class));
+                            startActivity(new Intent(Homepage.this, deliverMap.class));
                         }
                     }).addOnFailureListener(new OnFailureListener() {
                         @Override
