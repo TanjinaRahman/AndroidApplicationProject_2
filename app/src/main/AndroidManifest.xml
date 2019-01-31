@@ -18,6 +18,7 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning"
         tools:replace="android:icon">
+        <activity android:name=".CustomerMap"></activity>
         <activity android:name=".Details_hand" />
         <activity android:name=".Details_dress" />
         <activity

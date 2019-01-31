@@ -22,9 +22,15 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.List;
 
 
 public class deliverMap extends FragmentActivity implements OnMapReadyCallback, GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener, com.google.android.gms.location.LocationListener {
@@ -36,16 +42,22 @@ public class deliverMap extends FragmentActivity implements OnMapReadyCallback, 
 
     private Button mLogout;
 
+    private String customerId = "";
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_deliver_map);
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
+        // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+
+
         mLogout = (Button) findViewById(R.id.logout);
-        mLogout.setOnClickListener(new View.OnClickListener(){
+        mLogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 FirebaseAuth.getInstance().signOut();
@@ -55,8 +67,53 @@ public class deliverMap extends FragmentActivity implements OnMapReadyCallback, 
                 return;
             }
         });
+
+        getAssignedCustomer();
     }
 
+    private void getAssignedCustomer(){
+        String driverId = FirebaseAuth.getInstance().getCurrentUser().getUid();
+        DatabaseReference assignedCustomerRef = FirebaseDatabase.getInstance().getReference().child("Users").child("Drivers").child(driverId).child("customerRideId");
+        assignedCustomerRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                if(dataSnapshot.exists()){
+                    customerId = dataSnapshot.getValue().toString();
+                    getAssignedCustomerPickupLocation();
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+            }
+        });
+    }
+
+    private void getAssignedCustomerPickupLocation(){
+        DatabaseReference assignedCustomerPickupLocationRef = FirebaseDatabase.getInstance().getReference().child("customerRequest").child(customerId).child("l");
+        assignedCustomerPickupLocationRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                if(dataSnapshot.exists()){
+                    List<Object> map = (List<Object>) dataSnapshot.getValue();
+                    double locationLat = 0;
+                    double locationLng = 0;
+                    if(map.get(0) != null){
+                        locationLat = Double.parseDouble(map.get(0).toString());
+                    }
+                    if(map.get(1) != null){
+                        locationLng = Double.parseDouble(map.get(1).toString());
+                    }
+                    LatLng driverLatLng = new LatLng(locationLat,locationLng);
+                    mMap.addMarker(new MarkerOptions().position(driverLatLng).title("pickup location"));
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+            }
+        });
+    }
 
 
     @Override
@@ -82,20 +139,35 @@ public class deliverMap extends FragmentActivity implements OnMapReadyCallback, 
     @Override
     public void onLocationChanged(Location location) {
         if(getApplicationContext()!=null){
+
             mLastLocation = location;
-
             LatLng latLng = new LatLng(location.getLatitude(),location.getLongitude());
-
             mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
             mMap.animateCamera(CameraUpdateFactory.zoomTo(11));
 
-
-
             String userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
-            DatabaseReference ref = FirebaseDatabase.getInstance().getReference("driversAvailable");
+            DatabaseReference refAvailable = FirebaseDatabase.getInstance().getReference("driversAvailable");
+            DatabaseReference refWorking = FirebaseDatabase.getInstance().getReference("driversWorking");
+            GeoFire geoFireAvailable = new GeoFire(refAvailable);
+            GeoFire geoFireWorking = new GeoFire(refWorking);
 
-            GeoFire geoFire = new GeoFire(ref);
-            geoFire.setLocation(userId, new GeoLocation(location.getLatitude(), location.getLongitude()));
+            switch (customerId){
+                case "":
+                    geoFireWorking.removeLocation(userId);
+                    geoFireAvailable.setLocation(userId, new GeoLocation(location.getLatitude(), location.getLongitude()));
+                    break;
+
+                default:
+                    geoFireAvailable.removeLocation(userId);
+                    geoFireWorking.setLocation(userId, new GeoLocation(location.getLatitude(), location.getLongitude()));
+                    break;
+            }
+
+
+
+
+
+
         }
     }
 
