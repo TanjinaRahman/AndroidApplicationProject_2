@@ -15,6 +15,7 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.tinni.myway.Model.Common;
 import com.example.tinni.myway.Model.Work;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -152,7 +153,7 @@ public class Homepage extends AppCompatActivity implements NavigationView.OnNavi
                 startActivity(new Intent(Homepage.this,profile.class));
                 break;
             case R.id.parcel:
-                startActivity(new Intent(Homepage.this,CustomerMap.class));
+                startActivity(new Intent(Homepage.this,parcel.class));
                 break;
             case R.id.work:
                 wannawork();
@@ -175,7 +176,7 @@ public class Homepage extends AppCompatActivity implements NavigationView.OnNavi
     private void wannawork() {
 
         if (work.child(auth.getCurrentUser().getUid())!=null) {
-            startActivity(new Intent(Homepage.this, deliverMap.class));
+            startActivity(new Intent(Homepage.this, work.class));
 
         } else {
             AlertDialog.Builder dialog = new AlertDialog.Builder(this);
@@ -184,13 +185,14 @@ public class Homepage extends AppCompatActivity implements NavigationView.OnNavi
             dialog.setPositiveButton("Agree", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
-                    Work wrk = new Work();
+                    final Work wrk = new Work();
                     wrk.setUId(auth.getCurrentUser().getUid());
+                    Common.cwork=wrk;
                     work.setValue(wrk).addOnSuccessListener(new OnSuccessListener<Void>() {
                         @Override
                         public void onSuccess(Void aVoid) {
                             Toast.makeText(Homepage.this, "Congratulations", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(Homepage.this, deliverMap.class));
+                            startActivity(new Intent(Homepage.this, work.class));
                         }
                     }).addOnFailureListener(new OnFailureListener() {
                         @Override
