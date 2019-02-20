@@ -15,7 +15,6 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.tinni.myway.Model.Common;
 import com.example.tinni.myway.Model.Work;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -153,7 +152,7 @@ public class Homepage extends AppCompatActivity implements NavigationView.OnNavi
                 startActivity(new Intent(Homepage.this,profile.class));
                 break;
             case R.id.parcel:
-                startActivity(new Intent(Homepage.this,parcel.class));
+                startActivity(new Intent(Homepage.this,Parcel.class));
                 break;
             case R.id.work:
                 wannawork();
@@ -187,7 +186,7 @@ public class Homepage extends AppCompatActivity implements NavigationView.OnNavi
                 public void onClick(DialogInterface dialog, int which) {
                     final Work wrk = new Work();
                     wrk.setUId(auth.getCurrentUser().getUid());
-                    Common.cwork=wrk;
+                    //Common.cwork=wrk;
                     work.setValue(wrk).addOnSuccessListener(new OnSuccessListener<Void>() {
                         @Override
                         public void onSuccess(Void aVoid) {
