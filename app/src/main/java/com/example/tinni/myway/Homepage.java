@@ -152,7 +152,7 @@ public class Homepage extends AppCompatActivity implements NavigationView.OnNavi
                 startActivity(new Intent(Homepage.this,profile.class));
                 break;
             case R.id.parcel:
-                startActivity(new Intent(Homepage.this,Parcel.class));
+                startActivity(new Intent(Homepage.this,Pbuyermap.class));
                 break;
             case R.id.work:
                 wannawork();
