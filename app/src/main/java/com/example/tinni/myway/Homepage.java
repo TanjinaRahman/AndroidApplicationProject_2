@@ -27,12 +27,12 @@ import com.google.firebase.database.ValueEventListener;
 
 public class Homepage extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
      //ProgressDialog mprogress;
-    public String name;
+    public String name,t="";
      DrawerLayout mDrawerLayout;
      ActionBarDrawerToggle mToggle;
      FirebaseAuth auth;
      FirebaseDatabase db;
-     DatabaseReference user,work;
+     DatabaseReference user,workk;
      TextView nm,eml;
 
      CardView dr,hd,fr,fo;
@@ -44,7 +44,7 @@ public class Homepage extends AppCompatActivity implements NavigationView.OnNavi
         auth = FirebaseAuth.getInstance();
         db = FirebaseDatabase.getInstance();
         user = db.getReference("Users").child("Buyer").child(auth.getCurrentUser().getUid());
-        work = db.getReference("Work");
+        workk = db.getReference("Worker");
      /*   //progressbar
         mprogress= new ProgressDialog(this);
         // mprogress.setTitle("Processing...");
@@ -154,6 +154,10 @@ public class Homepage extends AppCompatActivity implements NavigationView.OnNavi
             case R.id.parcel:
                 startActivity(new Intent(Homepage.this,Pbuyermap.class));
                 break;
+
+            case R.id.shop:
+                startActivity(new Intent(Homepage.this,deliverMap.class));
+                break;
             case R.id.work:
                 wannawork();
                 break;
@@ -174,11 +178,28 @@ public class Homepage extends AppCompatActivity implements NavigationView.OnNavi
 
     private void wannawork() {
 
-        if (work.child(auth.getCurrentUser().getUid())!=null) {
-            startActivity(new Intent(Homepage.this, work.class));
 
-        } else {
-            AlertDialog.Builder dialog = new AlertDialog.Builder(this);
+        final String x = auth.getCurrentUser().getUid();
+        if(t=="ok") {
+            workk.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    String xx = dataSnapshot.child("uid").getValue().toString();
+                    if (xx.equals(x)) {
+                        startActivity(new Intent(Homepage.this, work.class));
+
+                    }
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                }
+            });
+        }
+
+        else {
+            AlertDialog.Builder dialog = new AlertDialog.Builder(Homepage.this);
             dialog.setTitle("Want to Work? ");
             dialog.setMessage("If you want to work here,then you have to pay 2$ per month.");
             dialog.setPositiveButton("Agree", new DialogInterface.OnClickListener() {
@@ -187,11 +208,12 @@ public class Homepage extends AppCompatActivity implements NavigationView.OnNavi
                     final Work wrk = new Work();
                     wrk.setUId(auth.getCurrentUser().getUid());
                     //Common.cwork=wrk;
-                    work.setValue(wrk).addOnSuccessListener(new OnSuccessListener<Void>() {
+                    workk.setValue(wrk).addOnSuccessListener(new OnSuccessListener<Void>() {
                         @Override
                         public void onSuccess(Void aVoid) {
                             Toast.makeText(Homepage.this, "Congratulations", Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(Homepage.this, work.class));
+                            t="ok";
                         }
                     }).addOnFailureListener(new OnFailureListener() {
                         @Override
