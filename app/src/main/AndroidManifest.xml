@@ -37,8 +37,11 @@
             android:value="@string/google_maps_key" />
 
         <activity
+            android:name=".Workernew"
+            android:label="@string/title_activity_workernew"></activity>
+        <activity
             android:name=".Pbuyermap"
-            android:label="@string/title_activity_pbuyermap"></activity>
+            android:label="@string/title_activity_pbuyermap" />
         <activity android:name=".Parcel" />
         <activity android:name=".work" />
         <activity android:name=".CustomerMap" />

@@ -186,7 +186,7 @@ public class Homepage extends AppCompatActivity implements NavigationView.OnNavi
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                     String xx = dataSnapshot.child("uid").getValue().toString();
                     if (xx.equals(x)) {
-                        startActivity(new Intent(Homepage.this, work.class));
+                        startActivity(new Intent(Homepage.this, Workernew.class));
 
                     }
                 }
@@ -212,7 +212,7 @@ public class Homepage extends AppCompatActivity implements NavigationView.OnNavi
                         @Override
                         public void onSuccess(Void aVoid) {
                             Toast.makeText(Homepage.this, "Congratulations", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(Homepage.this, work.class));
+                            startActivity(new Intent(Homepage.this, Workernew.class));
                             t="ok";
                         }
                     }).addOnFailureListener(new OnFailureListener() {
