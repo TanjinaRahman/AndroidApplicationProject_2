@@ -27,8 +27,9 @@ import com.google.firebase.database.ValueEventListener;
 
 public class Homepage extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
      //ProgressDialog mprogress;
-    public String name,t="";
-     DrawerLayout mDrawerLayout;
+    public String name;
+
+    DrawerLayout mDrawerLayout;
      ActionBarDrawerToggle mToggle;
      FirebaseAuth auth;
      FirebaseDatabase db;
@@ -41,10 +42,13 @@ public class Homepage extends AppCompatActivity implements NavigationView.OnNavi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homepage);
+
+
+
         auth = FirebaseAuth.getInstance();
         db = FirebaseDatabase.getInstance();
         user = db.getReference("Users").child("Buyer").child(auth.getCurrentUser().getUid());
-        workk = db.getReference("Worker").child(auth.getCurrentUser().getUid());
+
      /*   //progressbar
         mprogress= new ProgressDialog(this);
         // mprogress.setTitle("Processing...");
@@ -177,60 +181,65 @@ public class Homepage extends AppCompatActivity implements NavigationView.OnNavi
     }
 
     private void wannawork() {
-
-
+        workk = db.getReference("Worker").child(auth.getCurrentUser().getUid());
         final String x = auth.getCurrentUser().getUid();
-       // if(t=="ok") {
-            workk.addValueEventListener(new ValueEventListener() {
-                @Override
-                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                    String xx = dataSnapshot.child("uid").getValue().toString();
-                    if (xx.equals(x)) {
-                        startActivity(new Intent(Homepage.this, Workernew.class));
+     /*   if(t=="ok") {
 
-                    }
-                    else {
-                        AlertDialog.Builder dialog = new AlertDialog.Builder(Homepage.this);
-                        dialog.setTitle("Want to Work? ");
-                        dialog.setMessage("If you want to work here,then you have to pay 2$ per month.");
-                        dialog.setPositiveButton("Agree", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                final Work wrk = new Work();
-                                wrk.setUId(auth.getCurrentUser().getUid());
-                                //Common.cwork=wrk;
-                                workk.setValue(wrk).addOnSuccessListener(new OnSuccessListener<Void>() {
-                                    @Override
-                                    public void onSuccess(Void aVoid) {
-                                        Toast.makeText(Homepage.this, "Congratulations", Toast.LENGTH_SHORT).show();
-                                        startActivity(new Intent(Homepage.this, Workernew.class));
-                                        t="ok";
-                                    }
-                                }).addOnFailureListener(new OnFailureListener() {
-                                    @Override
-                                    public void onFailure(@NonNull Exception e) {
+        }*/
+     //if(!workk.getDatabase().equals(null)) {
+         workk.addValueEventListener(new ValueEventListener() {
+             @Override
+             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                                        Toast.makeText(Homepage.this, "Oh, something went worng!", Toast.LENGTH_SHORT).show();
-                                    }
-                                });
-                            }
-                        }).setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                dialog.dismiss();
-                            }
-                        });
-                        dialog.show();
-                    }
+                 if (dataSnapshot.exists() && dataSnapshot.child("uid").getValue().equals(x)) {
+                     startActivity(new Intent(Homepage.this, Workernew.class));
+                    // Toast.makeText(Homepage.this, "not ok", Toast.LENGTH_SHORT).show();
+                     finish();
 
-                }
+                 }
+                 else {
+                     AlertDialog.Builder dialog = new AlertDialog.Builder(Homepage.this);
+                     dialog.setTitle("Want to Work? ");
+                     dialog.setMessage("If you want to work here,then you have to pay 2$ per month.");
+                     dialog.setPositiveButton("Agree", new DialogInterface.OnClickListener() {
+                         @Override
+                         public void onClick(DialogInterface dialog, int which) {
+                             final Work wrk = new Work();
+                             wrk.setUId(auth.getCurrentUser().getUid());
+                             //Common.cwork=wrk;
+                             workk.setValue(wrk).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                 @Override
+                                 public void onSuccess(Void aVoid) {
+                                     Toast.makeText(Homepage.this, "Congratulations", Toast.LENGTH_SHORT).show();
+                                     startActivity(new Intent(Homepage.this, Workernew.class));
+                                     finish();
 
-                @Override
-                public void onCancelled(@NonNull DatabaseError databaseError) {
+                                 }
+                             }).addOnFailureListener(new OnFailureListener() {
+                                 @Override
+                                 public void onFailure(@NonNull Exception e) {
 
-                }
-            });
-       // }
+                                     Toast.makeText(Homepage.this, "Oh, something went worng!", Toast.LENGTH_SHORT).show();
+                                 }
+                             });
+                         }
+                     }).setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                         @Override
+                         public void onClick(DialogInterface dialog, int which) {
+                             dialog.dismiss();
+                         }
+                     });
+                     dialog.show();
+                 }
+
+             }
+
+             @Override
+             public void onCancelled(@NonNull DatabaseError databaseError) {
+
+             }
+         });
+
 
     }
 }
