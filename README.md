@@ -16,8 +16,14 @@ Minimum SDK Version 21
 
 ### Sgning Process
 At first user has to register with email address, password, name and phone no. Then verification mail will be sent on given email address.After verification user will be able to log in his/her account.
+
+<img src="images/a.png" height=400> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="images/b.png" height=400> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="images/c.png" height=400> <br><br>
+<img src="images/d.png" height=400> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="images/e.png" height=400> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="images/f.png" height=400><br><br>
+
+
 ##### Forgot Password
 User can reset password. He/she has to type mail address and password reset email will be sent to that address. Then user can set new password.
+
 
  ### Homepage
 In this page products will be displayed. Sellers can display their product here and also famous products of various area will be displayed here.
