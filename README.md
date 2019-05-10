@@ -27,7 +27,7 @@ After verification user will be able to log in his/her account.
 ##### Forgot Password
 User can reset password. He/she has to type mail address and password reset email will be sent to that address. Then user can set new password.<br>
 
-<img src="images/fp.png" height=400> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="images/fpa.png" height=400> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="images/fpas.png" height=400><br><br>
+<img src="images/fp.jpeg" height=400> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="images/fpa.png" height=400> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="images/fpas.png" height=400><br><br>
 
 
  ### Homepage
@@ -59,7 +59,7 @@ User can also search for a specific location.<br>
 If user want to register as worker then he/she has to confirm here.
 After signing in as worker he/she will be able to sign out as worker. After then he/she will be no longer a worker but may signed in as normal user.
 
-<br><img src="images/p.png" height=400> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="images/q.png" height=400> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="images/qr.png" height=400><br><br>
+<br><img src="images/p.jpeg" height=400> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="images/q.png" height=400> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="images/qr.png" height=400><br><br>
 
 ##### Settings
 <img src="images/r.png" height=400><br>
