@@ -14,11 +14,14 @@ Minimum SDK Version 21
 
 ## Description
 
-### Sgning Process
-At first user has to register with email address, password, name and phone no. Then verification mail will be sent on given email address.After verification user will be able to log in his/her account.
+### Signing Process
+At first user has to register with email address, password, name and phone no. Then verification mail will be sent on given email address.
 
-<img src="images/a.png" height=400> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="images/b.png" height=400> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="images/c.png" height=400> <br><br>
-<img src="images/d.png" height=400> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="images/e.png" height=400> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="images/f.png" height=400><br><br>
+<br><img src="images/a.png" height=400> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="images/b.png" height=400> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="images/c.png" height=400> <br><br>
+
+After verification user will be able to log in his/her account.
+
+<br><img src="images/d.png" height=400> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="images/e.png" height=400> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="images/f.png" height=400><br><br>
 
 
 ##### Forgot Password
@@ -31,19 +34,25 @@ User can reset password. He/she has to type mail address and password reset emai
 In this page products will be displayed. Sellers can display their product here and also famous products of various area will be displayed here. User can rate this products also.<br>
 
 <img src="images/g.png" height=400> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="images/u.png" height=400> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="images/v.png" height=400><br><br><br>
-<img src="images/h.png" height=400><br>
+<img src="images/h.jpeg" height=400><br>
 
 ##### Profile
 User profile will display user name, photo, email address, and phone no. User will be able to change their profile picture.
 
-<br><img src="images/i.png" height=400><br>
+<br><img src="images/iii.png" height=400><br>
 
 ##### Parcel
 It will show user with red marker and available workers in 3km with green marker.
+
+
+<br><img src="images/ij.png" height=400> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="images/j.png" height=400> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="images/kkk.png" height=400><br><br>
+
 By clicking on green marker user can see worker name and phone no. By clicking on this user can make call to a specific worker. To make call apps will ask for permission.
 
-<br><img src="images/ij.png" height=400> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="images/j.png" height=400> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="images/k.png" height=400><br><br><img src="images/l.png" height=400> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="images/m.png" height=400> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="images/n.png" height=400><br><br>
+<br><img src="images/ll.png" height=400> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="images/m.png" height=400> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="images/nn.png" height=400><br><br>
+
 User can also search for a specific location.<br>
+
 <br> <img src="images/o.png" height=400><br>
 
 ##### Work
