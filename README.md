@@ -11,6 +11,7 @@ This apps will work as a medium to connect the customers with the workers to buy
 
 ## Prerequisites
 Minimum SDK Version 21
+Memory 5MB
 
 ## Description
 
